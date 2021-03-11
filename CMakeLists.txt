@@ -23,7 +23,7 @@ project(mem_file VERSION 0.1.0)
 message("CMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}")
 
 find_package(ZLIB REQUIRED)
-
+find_package(GTest CONFIG REQUIRED)
 include(CTest)
 enable_testing()
 
@@ -32,6 +32,10 @@ target_link_libraries(mem_file PRIVATE ZLIB::ZLIB)
 
 add_executable(example example.cpp)
 target_link_libraries(example PRIVATE mem_file)
+
+add_executable(unit_test unit_test.cpp)
+add_test(NAME unit_test COMMAND unit_test)
+target_link_libraries(unit_test PRIVATE GTest::gmock GTest::gtest GTest::gmock_main GTest::gtest_main mem_file)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
