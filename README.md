@@ -32,3 +32,15 @@ This code was downloaded and edited some to return std::vector<char> instead of 
 
    René Nyffenegger rene.nyffenegger@adp-gmbh.ch
 ```
+# Vcpkg / prerequesites
+The project use d:\vcpkg as root.  Installation is easy enough (https://docs.microsoft.com/en-us/cpp/build/vcpkg?view=msvc-160) - in this case on windows:
+```
+d:\> git clone https://github.com/microsoft/vcpkg
+d:\> cd vcpkg
+d:\vcpkg> bootstrap-vcpkg.bat
+d:\vcpkg> vcpkg.exe install zlib
+d:\vcpkg> vcpkg.exe install gtest
+```
+
+# Unit test
+I like googletest - and size we use vcpkg for zlib, a simple "vcpkg install gtest" do the trick
