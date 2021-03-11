@@ -2,7 +2,7 @@
 Test/evaluate using cmake with zlib from vcpkg and do some base64 encode&amp;decode 
 
 # Build
-The test was using VScode with the Visual Studio 2019 Community. Tried mingw first but its a bit tricky to get it using vcpkg (triplet/target mapped correctly)
+The test was using VScode with the Visual Studio 2019 Community. Tried mingw first but its a bit tricky to get it using vcpkg (triplet/target mapped correctly). Use cmake with the CMakeFiles.txt - which probably works fine for linux as well.
 
 # Base64
 This code was downloaded and edited some to return std::vector<char> instead of std::string.
